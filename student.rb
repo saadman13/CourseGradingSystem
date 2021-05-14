@@ -23,7 +23,6 @@ class Student
         end
     end
 
-
     def update_mark(course_name)
         @courses.each do |course|
 			if course.name == course_name
@@ -31,10 +30,10 @@ class Student
                 component = gets.chomp()
                 puts "How much did you score?"
                 percentage = gets.chomp().to_f
-
 				course.update_mark(component,percentage)
-				break
+				return
 			end
+            puts "No courses with this course_name"
 		end
     end
 
@@ -46,6 +45,7 @@ class Student
             end
         end
     end
+
     def calc_gpa()
         
     end

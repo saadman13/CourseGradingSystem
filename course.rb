@@ -1,6 +1,6 @@
 class Course 
 
-	attr_reader :name, :cumulative_average, :mark_distribution, :marks_received
+	attr_accessor :name, :cumulative_average, :mark_distribution, :marks_received
 
 	def initialize(name,mark_distribution)
 		@name = name 
@@ -10,6 +10,7 @@ class Course
 			@marks_received[key] = 0
 		end
 	end
+
 
 	def update_mark(component,percentage)
 		if marks_received.has_key?(component)
